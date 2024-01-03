@@ -119,7 +119,7 @@ allProjects.forEach((project) => {
     };
 
     let iFrame = document.createElement("iframe");
-    iFrame.style.width = "560px";
+    iFrame.style.width = "100%";
     iFrame.style.height = "316px";
     iFrame.setAttribute("allow", "fullscreen");
     iFrame.src = videos[Number(project.dataset.video)].src;
