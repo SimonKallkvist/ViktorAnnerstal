@@ -1,5 +1,66 @@
 // --------->
 
+// videoSources
+
+let videos = [
+  {
+    src: "https://www.youtube.com/embed/KBR_LzSGtyE?si=nseiG7ixUHNBfjze",
+    project: "BRAVE",
+  },
+  {
+    src: "https://www.youtube.com/embed/dNgzK7YueJ0?si=kg3tRJNmtL5JF-t-",
+    project: "MOONICA",
+  },
+  {
+    src: "https://www.youtube.com/embed/Bkh8cQox32A?si=Dwh9koOhCiXZYo9o",
+    project: "BILSKÅDAREN",
+  },
+  {
+    src: "https://www.youtube.com/embed/vLGFC38azKs?si=Nax-0rmX-qQfEK0O",
+    project: "DISTRESSED",
+  },
+  {
+    src: "https://player.vimeo.com/video/892623875?h=809de96b00",
+    project: "SOLSIDAN",
+  },
+  {
+    src: "https://www.youtube.com/embed/5g6zZ7bPJqg?si=5IZ6raOro4h45FiC",
+    project: "HAGLÖFS",
+  },
+  {
+    src: "https://www.youtube.com/embed/L-5jderNQ78?si=gcLGuRn0AXt320K9",
+    project: "FUNGI",
+  },
+  {
+    src: "https://www.youtube.com/embed/KBR_LzSGtyE?si=nseiG7ixUHNBfjze",
+    project: "MAGGIOBRYANT",
+  },
+  {
+    src: "https://www.youtube.com/embed/mywAUVX8KeA?si=CMU0y35_szWMQGbf",
+    project: "LETSDANCE",
+  },
+  {
+    src: "https://player.vimeo.com/video/892625163?h=ed90dc04e4",
+    project: "BÄSTITEST",
+  },
+  {
+    src: "https://player.vimeo.com/video/811279975?h=62a1ad5165",
+    project: "ADDDHOC",
+  },
+  {
+    src: "https://player.vimeo.com/video/350575397?h=7ffd1eb867",
+    project: "FILMSTADEN",
+  },
+  {
+    src: "https://www.youtube.com/embed/BRLgm-uudaE?si=p_hj7xGVZPhCrLDB",
+    project: "LUCASSTEVE1",
+  },
+  {
+    src: "https://www.youtube.com/embed/KBR_LzSGtyE?si=nseiG7ixUHNBfjze",
+    project: "WELAND",
+  },
+];
+
 // Play trailer on hover
 
 let trailerVideo = document.querySelectorAll(".trailer-video video");
@@ -56,8 +117,16 @@ allProjects.forEach((project) => {
     window.onscroll = function () {
       window.scrollTo(x, y);
     };
-    previewContainer.innerHTML =
-      '<iframe width="640" height="360" src="https://www.youtube.com/embed/KBR_LzSGtyE?si=nseiG7ixUHNBfjze" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+
+    let iFrame = document.createElement("iframe");
+    iFrame.style.width = "560px";
+    iFrame.style.height = "316px";
+    iFrame.setAttribute("allow", "fullscreen");
+    iFrame.src = videos[Number(project.dataset.video)].src;
+
+    console.log(Number(project.dataset.video));
+    previewContainer.appendChild(iFrame);
+    console.log(project.dataset.video);
   });
 });
 

@@ -301,6 +301,14 @@ header {
   transform: translate(-50%, -50%);
 }
 
+.hiddenP {
+  display: none;
+}
+
+.hiddenP iframe {
+  display: none;
+}
+
 /* Media qureis */
 @media screen and (max-width: 1440px) {
   .navLinks {
